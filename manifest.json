@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Last Song",
+  "description": "This extension will pause the current pandora song right before it ends.",
+  "version": "0.0",
+
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "32 pause.png"
+  },
+  "content_scripts": [{
+    "matches": ["https://www.pandora.com/*"],
+    "js": ["content.js"]
+  }],
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ]
+}
